@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #ffffff;
+  color: #111827;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border: none !important;
+  text-align: left !important;
+  display: block !important;
+}
+
+/* Custom scrollbar for dense table views */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print CSS rules for pixel-perfect A4 printing */
+@media print {
+  /* Hide all elements on the page */
+  body * {
+    visibility: hidden;
+  }
+  
+  /* Make the printable bill area and all its children visible */
+  #printable-bill-area,
+  #printable-bill-area * {
+    visibility: visible !important;
+  }
+  
+  /* Position the printable area at the absolute top-left of the page */
+  #printable-bill-area {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Set A4 page settings and strip browser headers/footers */
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+}
