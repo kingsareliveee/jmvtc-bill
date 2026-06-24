@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { 
   LayoutDashboard, 
   FileText, 
@@ -19,7 +19,7 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { settings, isOfflineMode } = useTransportStore();
-  const location = useLocation();
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigation = [
